@@ -12,8 +12,8 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = Task.create(article_params)
-    redirect_to task_path(@article)
+    @article = Article.create(article_params)
+    redirect_to article_path(@article)
   end
 
   def edit
@@ -35,6 +35,6 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    params.require(:article).permit(:title, :details, :completed)
+    params.require(:article).permit(:title, :content, :completed)
   end
 end
